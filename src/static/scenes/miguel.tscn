@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://csqx5v4cb1sxy"]
+
+[ext_resource type="Texture2D" uid="uid://bcx2tunuujggh" path="res://icon.svg" id="1_32xcs"]
+[ext_resource type="Script" uid="uid://csdfrfu0at0bx" path="res://src/static/scripts/miguel.gd" id="1_mo6on"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo6on"]
+size = Vector2(74, 77)
+
+[node name="Miguel" type="CharacterBody2D" unique_id=225266533]
+script = ExtResource("1_mo6on")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070269397]
+position = Vector2(0.9999962, 2)
+scale = Vector2(0.578125, 0.609375)
+texture = ExtResource("1_32xcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1805786264]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_mo6on")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://do27y0rf8qcaw"]
+
+[ext_resource type="PackedScene" uid="uid://csqx5v4cb1sxy" path="res://src/static/scenes/miguel.tscn" id="1_mkgkv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkgkv"]
+size = Vector2(1005.5, 20)
+
+[node name="main_scene" type="Node2D" unique_id=204176921]
+
+[node name="Miguel" parent="." unique_id=225266533 instance=ExtResource("1_mkgkv")]
+position = Vector2(230, 76)
+
+[node name="chao temporario" type="StaticBody2D" parent="." unique_id=238834505]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao temporario" unique_id=383485549]
+position = Vector2(502.25, 334)
+shape = SubResource("RectangleShape2D_mkgkv")
