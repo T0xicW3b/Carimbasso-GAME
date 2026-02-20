@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb6ufftl1fv2l"]
+
+[ext_resource type="Script" uid="uid://do6hpxbkh5qgc" path="res://src/static/scripts/tela_incial.gd" id="1_xauj7"]
+[ext_resource type="Texture2D" uid="uid://dbp76uupqscdm" path="res://src/Assets/Sprites/tela incial improvisada.png" id="2_o2e66"]
+[ext_resource type="Theme" uid="uid://1fypyb8opt88" path="res://src/Assets/Sprites/temas.tres" id="3_2e6fy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8hxf"]
+
+[node name="tela" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xauj7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1283.0
+offset_bottom = 715.0
+texture = ExtResource("2_o2e66")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1288.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_2e6fy")
+
+[node name="jogar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_2e6fy")
+text = "Jogar"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_f8hxf")
+
+[node name="nivel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_2e6fy")
+text = "Selecionar nível
+"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_f8hxf")
+
+[node name="creditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_2e6fy")
+text = "Créditos
+"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_f8hxf")
+
+[node name="sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_2e6fy")
+text = "Sair do jogo"
+
+[node name="textura_para personagem" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/nivel" to="." method="_on_nivel_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]

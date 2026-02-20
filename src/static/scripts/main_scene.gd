@@ -1,6 +1,6 @@
 extends Node2D
 
-var isFullscreen: bool
+"""var isFullscreen: bool
 
 #achei mais organizado deixar duas funções pra tela cheia
 func _input(event: InputEvent) -> void:
@@ -16,4 +16,16 @@ func toogle_fullscreen() -> void:
 	if isFullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)"""
+@onready var pause_menu = get_node ("menu_de_pause")
+
+func ready():
+	pause_menu.visible = false
+
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		toggle_pause()
+		print("ESC pressionado")
+func toggle_pause():
+	get_tree().paused = !get_tree().paused
+	pause_menu.visible = get_tree().paused
