@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8pgm7wppd7xp"
-path="res://.godot/imported/os carimbos.png-2829a8b3d5d939a2fc4b2483d0b064db.ctex"
+uid="uid://b114iods3wpbb"
+path="res://.godot/imported/carimbo_verde.png-fa8152e0568b493c2218856e94b369cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Assets/Sprites/os carimbos.png"
-dest_files=["res://.godot/imported/os carimbos.png-2829a8b3d5d939a2fc4b2483d0b064db.ctex"]
+source_file="res://src/Assets/Sprites/Cursores/carimbo_verde.png"
+dest_files=["res://.godot/imported/carimbo_verde.png-fa8152e0568b493c2218856e94b369cc.ctex"]
 
 [params]
 

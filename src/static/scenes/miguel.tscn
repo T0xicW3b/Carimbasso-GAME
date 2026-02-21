@@ -1,19 +1,32 @@
 [gd_scene format=3 uid="uid://csqx5v4cb1sxy"]
 
-[ext_resource type="Texture2D" uid="uid://bcx2tunuujggh" path="res://icon.svg" id="1_32xcs"]
-[ext_resource type="Script" uid="uid://csdfrfu0at0bx" path="res://src/static/scripts/miguel.gd" id="1_mo6on"]
+[ext_resource type="Script" uid="uid://bpuuo1a6p6uoi" path="res://src/static/scripts/miguel.gd" id="1_mo6on"]
+[ext_resource type="Texture2D" uid="uid://fy3r1773xrbk" path="res://src/Assets/Sprites/miguel.png" id="2_mo6on"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo6on"]
-size = Vector2(74, 77)
+size = Vector2(11, 34)
+
+[sub_resource type="Animation" id="Animation_1vagi"]
+resource_name = "miguel_iddle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2siqn"]
+_data = {
+&"miguel_iddle": SubResource("Animation_1vagi")
+}
 
 [node name="Miguel" type="CharacterBody2D" unique_id=225266533]
 script = ExtResource("1_mo6on")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070269397]
+[node name="Texture" type="Sprite2D" parent="." unique_id=2070269397]
 position = Vector2(0.9999962, 2)
 scale = Vector2(0.578125, 0.609375)
-texture = ExtResource("1_32xcs")
+texture = ExtResource("2_mo6on")
+hframes = 10
+vframes = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1805786264]
-position = Vector2(0, 1)
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1805786264]
+position = Vector2(1.5, 5)
 shape = SubResource("RectangleShape2D_mo6on")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=368896134]
+libraries/ = SubResource("AnimationLibrary_2siqn")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://c28jbnqaxnmyy"]
+[gd_scene format=3 uid="uid://c28jbnqaxnmyy"]
 
-[ext_resource type="Texture2D" uid="uid://wss8drvxvr0g" path="res://src/assets/Sprites/animação carimbando.png" id="1_dhmf5"]
+[ext_resource type="Texture2D" uid="uid://ubo8an56hdqu" path="res://src/Assets/Sprites/animação carimbando.png" id="1_dhmf5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_680lk"]
 atlas = ExtResource("1_dhmf5")

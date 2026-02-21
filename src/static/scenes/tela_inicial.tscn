@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb6ufftl1fv2l"]
+[gd_scene format=3 uid="uid://bb6ufftl1fv2l"]
 
 [ext_resource type="Script" uid="uid://do6hpxbkh5qgc" path="res://src/static/scripts/tela_incial.gd" id="1_xauj7"]
 [ext_resource type="Texture2D" uid="uid://dbp76uupqscdm" path="res://src/Assets/Sprites/tela incial improvisada.png" id="2_o2e66"]
@@ -6,7 +6,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f8hxf"]
 
-[node name="tela" type="Control"]
+[node name="tela" type="Control" unique_id=1938667506]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,13 +15,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xauj7")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=346743564]
 layout_mode = 0
 offset_right = 1283.0
 offset_bottom = 715.0
 texture = ExtResource("2_o2e66")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1559062289]
 layout_mode = 0
 offset_right = 1288.0
 offset_bottom = 720.0
@@ -29,55 +29,55 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1531980574]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2033912693]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
 
-[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="game_logo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1558960932]
 layout_mode = 2
 theme = ExtResource("3_2e6fy")
 
-[node name="jogar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="jogar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1014114978]
 layout_mode = 2
 theme = ExtResource("3_2e6fy")
 text = "Jogar"
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=323235713]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_f8hxf")
 
-[node name="nivel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="nivel" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=388283099]
 layout_mode = 2
 theme = ExtResource("3_2e6fy")
 text = "Selecionar nível
 "
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1356530154]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_f8hxf")
 
-[node name="creditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="creditos" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=606844319]
 layout_mode = 2
 theme = ExtResource("3_2e6fy")
 text = "Créditos
 "
 
-[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1705728395]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_f8hxf")
 
-[node name="sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2019228831]
 layout_mode = 2
 theme = ExtResource("3_2e6fy")
 text = "Sair do jogo"
 
-[node name="textura_para personagem" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="textura_para personagem" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1918201985]
 layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/jogar" to="." method="_on_jogar_pressed"]

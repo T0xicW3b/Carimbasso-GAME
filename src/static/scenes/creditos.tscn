@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://2t46jifu0skb"]
+[gd_scene format=3 uid="uid://2t46jifu0skb"]
 
 [ext_resource type="Script" uid="uid://c4om2mef6f18j" path="res://src/static/scripts/creditos.gd" id="1_ibacd"]
 [ext_resource type="Theme" uid="uid://1fypyb8opt88" path="res://src/Assets/Sprites/temas.tres" id="1_qfvmg"]
 
-[node name="creditos" type="Control"]
+[node name="creditos" type="Control" unique_id=521591548]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,13 +12,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ibacd")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=493267843]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 719.0
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2130888904]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -33,7 +33,7 @@ text = "Créditos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="." unique_id=1426454304]
 layout_mode = 0
 offset_left = 257.0
 offset_top = 191.0
@@ -47,7 +47,7 @@ Designer:Dino Bya
 Animador: Dino G e Jovinaldo
 Dirigido por: Jovinaldo"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=396878729]
 layout_mode = 0
 offset_left = 119.0
 offset_top = 534.0

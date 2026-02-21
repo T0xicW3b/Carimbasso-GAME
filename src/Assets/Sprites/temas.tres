@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://1fypyb8opt88"]
+[gd_resource type="Theme" format=3 uid="uid://1fypyb8opt88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14m4h"]
 bg_color = Color(0, 0.6941799, 0.63012624, 1)
