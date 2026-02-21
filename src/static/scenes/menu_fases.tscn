@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://dy8riedpuqwig"]
+
+[ext_resource type="Script" uid="uid://b0btv286c1g22" path="res://src/static/scripts/menu_fases.gd" id="1_puryw"]
+[ext_resource type="Texture2D" uid="uid://dbp76uupqscdm" path="res://src/Assets/Sprites/tela incial improvisada.png" id="1_qassj"]
+[ext_resource type="Theme" uid="uid://1fypyb8opt88" path="res://src/Assets/Sprites/temas.tres" id="2_puryw"]
+
+[node name="Control" type="Control" unique_id=1841603176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_puryw")
+
+[node name="tela de fundo" type="TextureRect" parent="." unique_id=2051137638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.005195044
+texture = ExtResource("1_qassj")
+
+[node name="Label" type="Label" parent="." unique_id=1252591260]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 51.0
+offset_right = 649.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 40
+text = "Selecionar Nível"
+
+[node name="fase1" type="Button" parent="." unique_id=1346322486]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 120.0
+offset_top = 229.0
+offset_right = 192.0
+offset_bottom = 291.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "01"
+
+[node name="fase2" type="Button" parent="." unique_id=2097129953]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 240.0
+offset_top = 228.0
+offset_right = 312.0
+offset_bottom = 290.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "02"
+
+[node name="fase3" type="Button" parent="." unique_id=744156615]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 349.0
+offset_top = 227.0
+offset_right = 421.0
+offset_bottom = 289.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "03"
+
+[node name="fase4" type="Button" parent="." unique_id=828599295]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 462.0
+offset_top = 228.0
+offset_right = 534.0
+offset_bottom = 290.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "04"
+
+[node name="fase5" type="Button" parent="." unique_id=1620192661]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 576.0
+offset_top = 229.0
+offset_right = 648.0
+offset_bottom = 291.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "05"
+
+[node name="fase6" type="Button" parent="." unique_id=326859736]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 123.0
+offset_top = 336.0
+offset_right = 195.0
+offset_bottom = 398.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "06"
+
+[node name="fase7" type="Button" parent="." unique_id=1996644950]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 241.0
+offset_top = 336.0
+offset_right = 313.0
+offset_bottom = 398.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "07"
+
+[node name="fase8" type="Button" parent="." unique_id=1736407405]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 355.0
+offset_top = 335.0
+offset_right = 427.0
+offset_bottom = 397.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "08"
+
+[node name="fase9" type="Button" parent="." unique_id=1706978969]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 470.0
+offset_top = 342.0
+offset_right = 542.0
+offset_bottom = 404.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "09"
+
+[node name="fase10" type="Button" parent="." unique_id=390351566]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.022000002
+offset_left = 575.0
+offset_top = 340.0
+offset_right = 647.0
+offset_bottom = 402.16
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 40
+text = "10"
+
+[node name="voltar" type="Button" parent="." unique_id=1561071682]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 491.0
+offset_right = 656.0
+offset_bottom = 522.0
+theme = ExtResource("2_puryw")
+theme_override_font_sizes/font_size = 46
+text = "voltar"
+
+[connection signal="pressed" from="fase1" to="." method="_on_fase_1_pressed"]
+[connection signal="pressed" from="fase2" to="." method="_on_fase_2_pressed"]
+[connection signal="pressed" from="fase3" to="." method="_on_fase_3_pressed"]
+[connection signal="pressed" from="fase4" to="." method="_on_fase_4_pressed"]
+[connection signal="pressed" from="fase5" to="." method="_on_fase_5_pressed"]
+[connection signal="pressed" from="fase6" to="." method="_on_fase_6_pressed"]
+[connection signal="pressed" from="fase7" to="." method="_on_fase_7_pressed"]
+[connection signal="pressed" from="fase8" to="." method="_on_fase_8_pressed"]
+[connection signal="pressed" from="fase9" to="." method="_on_fase_9_pressed"]
+[connection signal="pressed" from="fase10" to="." method="_on_fase_10_pressed"]
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

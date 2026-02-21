@@ -16,4 +16,5 @@ func _on_voltar_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://src/static/scenes/tela_inicial.tscn")
 func _on_reiniciar_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://src/static/scenes/main_scene.tscn")
