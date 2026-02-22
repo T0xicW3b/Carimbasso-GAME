@@ -25,23 +25,25 @@ func _input(event: InputEvent) -> void:
 	
 	toggle_cursor()
 	
-func ready():
+func _ready():
+	Global.load_data()
 	pause_menu.visible = false
-	#cursorStatus = toggle_cursor()
+	Input.set_custom_mouse_cursor(cursorStatus)
 
 func _process(_delta):
-	
-	Input.set_custom_mouse_cursor(cursorStatus)
 	
 	if Input.is_action_just_pressed("pause"):
 		toggle_pause()
 		#print("ESC pressionado")
+	
+
 func toogle_fullscreen() -> void:
 	if isFullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-@onready var pause_menu = get_node ("menu_de_pause")
+	
+@onready var pause_menu = get_node("menu_de_pause")
 
 
 func toggle_pause():
