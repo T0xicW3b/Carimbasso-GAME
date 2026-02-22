@@ -4,8 +4,6 @@ extends Control
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-	
 func _on_sair__pressed():
 	get_tree().quit()
 func _on_voltar_pressed() -> void:
