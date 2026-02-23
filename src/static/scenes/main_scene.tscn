@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://4dml8xhpjbnh" path="res://src/static/scripts/main_scene.gd" id="1_grvaw"]
 [ext_resource type="PackedScene" uid="uid://csqx5v4cb1sxy" path="res://src/static/scenes/miguel.tscn" id="1_mkgkv"]
 [ext_resource type="PackedScene" uid="uid://cbvto4hktp34s" path="res://src/static/scenes/menu_de_pause.tscn" id="3_h6ilx"]
+[ext_resource type="AudioStream" uid="uid://du550ct0b11m8" path="res://src/Sounds/pensando.mp3" id="4_vuki4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkgkv"]
 size = Vector2(1005.5, 20)
@@ -24,3 +25,8 @@ shape = SubResource("RectangleShape2D_mkgkv")
 
 [node name="menu_de_pause" parent="." unique_id=1578989505 instance=ExtResource("3_h6ilx")]
 process_mode = 2
+
+[node name="pensando" type="AudioStreamPlayer" parent="." unique_id=53005780]
+stream = ExtResource("4_vuki4")
+volume_db = -13.983
+autoplay = true

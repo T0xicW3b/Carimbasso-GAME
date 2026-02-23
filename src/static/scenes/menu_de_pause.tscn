@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbvto4hktp34s"]
+[gd_scene format=3 uid="uid://cbvto4hktp34s"]
 
 [ext_resource type="Script" uid="uid://dvmta146hj3bv" path="res://src/static/scripts/tela_paused.gd" id="1_asrfj"]
 [ext_resource type="Theme" uid="uid://1fypyb8opt88" path="res://src/Assets/Sprites/temas.tres" id="1_tp3lm"]
 
-[node name="menu_de_pause" type="Control"]
+[node name="menu_de_pause" type="Control" unique_id=1496067885]
 process_mode = 3
 visible = false
 layout_mode = 3
@@ -14,44 +14,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_asrfj")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1664027657]
 layout_mode = 0
 offset_left = 313.0
 offset_top = 127.0
 offset_right = 1006.0
 offset_bottom = 721.0
 
-[node name="sair_" type="Button" parent="."]
+[node name="sair_" type="Button" parent="." unique_id=1781212623]
 layout_mode = 0
-offset_left = 540.0
-offset_top = 517.0
-offset_right = 781.0
-offset_bottom = 614.0
+offset_left = 544.0
+offset_top = 568.0
+offset_right = 785.0
+offset_bottom = 665.0
 theme = ExtResource("1_tp3lm")
 text = "sair do jogo
 "
 
-[node name="voltar" type="Button" parent="."]
+[node name="voltar" type="Button" parent="." unique_id=97984354]
 layout_mode = 0
-offset_left = 541.0
-offset_top = 393.0
-offset_right = 782.0
-offset_bottom = 490.0
+offset_left = 544.0
+offset_top = 440.0
+offset_right = 785.0
+offset_bottom = 537.0
 theme = ExtResource("1_tp3lm")
 text = "voltar ao menu
 "
 
-[node name="reiniciar" type="Button" parent="."]
+[node name="reiniciar" type="Button" parent="." unique_id=390473488]
 layout_mode = 0
 offset_left = 544.0
-offset_top = 272.0
+offset_top = 312.0
 offset_right = 785.0
-offset_bottom = 369.0
+offset_bottom = 409.0
 theme = ExtResource("1_tp3lm")
 text = "Reiniciar
 "
 
-[node name="Label" type="Label" parent="."]
+[node name="salvar" type="Button" parent="." unique_id=1343479266]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 184.0
+offset_right = 785.0
+offset_bottom = 281.0
+theme = ExtResource("1_tp3lm")
+text = "Salvar
+"
+
+[node name="Label" type="Label" parent="." unique_id=1894604562]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -59,3 +69,4 @@ offset_bottom = 23.0
 [connection signal="pressed" from="sair_" to="." method="_on_sair__pressed"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="salvar" to="." method="_on_salvar_pressed"]
