@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4om2mef6f18j" path="res://src/static/scripts/creditos.gd" id="1_ibacd"]
 [ext_resource type="Theme" uid="uid://1fypyb8opt88" path="res://src/Assets/Sprites/temas.tres" id="1_qfvmg"]
+[ext_resource type="Texture2D" uid="uid://bn84k03ntqw35" path="res://src/Assets/Sprites/qrcode_.png" id="3_os62f"]
 
 [node name="creditos" type="Control" unique_id=521591548]
 layout_mode = 3
@@ -55,5 +56,10 @@ offset_right = 292.0
 offset_bottom = 620.0
 theme = ExtResource("1_qfvmg")
 text = "Voltar"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=287360545]
+position = Vector2(1028, 483.00003)
+scale = Vector2(0.27600005, 0.29)
+texture = ExtResource("3_os62f")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
