@@ -11,12 +11,9 @@ func _on_voltar_pressed() -> void:
 	get_tree().change_scene_to_file("res://src/static/scenes/tela_inicial.tscn")
 
 func _on_reiniciar_pressed() -> void:
-	get_tree().paused = false
 	var miguel = get_parent().get_node("Miguel")
-	if Global.characterPos:
-		miguel.global_position = Global.characterPos
-	else:
-		miguel.global_position = Vector2(139.0, 140.2222)
+	miguel.global_position = Vector2(139.0, 140.2222)
+	Global.characterPos = miguel.global_position
 	Global.save()
 
 func _on_salvar_pressed() -> void:
