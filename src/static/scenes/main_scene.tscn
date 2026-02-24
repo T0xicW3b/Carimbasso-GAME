@@ -10,11 +10,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkgkv"]
 size = Vector2(560.75, 20)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_2u5gs"]
-specular_color = Color(0.6784314, 0.67058825, 0.003921569, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6otq"]
 size = Vector2(227, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u5gs"]
+size = Vector2(34.375, 267)
 
 [node name="main_scene" type="Node2D" unique_id=2034795649]
 process_mode = 3
@@ -36,9 +36,6 @@ scale = Vector2(3.125476, 2.6807368)
 position = Vector2(276.625, 387)
 shape = SubResource("RectangleShape2D_mkgkv")
 
-[node name="Sprite2D" type="Sprite2D" parent="chao temporario" unique_id=1018627930]
-texture = SubResource("CanvasTexture_2u5gs")
-
 [node name="pensando" type="AudioStreamPlayer" parent="." unique_id=53005780]
 stream = ExtResource("4_vuki4")
 volume_db = -13.983
@@ -58,6 +55,12 @@ shape = SubResource("RectangleShape2D_q6otq")
 
 [node name="menu_de_pause" parent="." unique_id=1578989505 instance=ExtResource("3_h6ilx")]
 process_mode = 2
+
+[node name="chao temporario2" type="StaticBody2D" parent="." unique_id=1539075549]
+
+[node name="aaa" type="CollisionShape2D" parent="chao temporario2" unique_id=1133385774]
+position = Vector2(577.8125, 257.5)
+shape = SubResource("RectangleShape2D_2u5gs")
 
 [connection signal="body_entered" from="AreaJUMP" to="Miguel" method="_on_area_jump_body_entered"]
 [connection signal="body_exited" from="AreaJUMP" to="Miguel" method="_on_area_jump_body_exited"]

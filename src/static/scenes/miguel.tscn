@@ -1,36 +1,53 @@
 [gd_scene format=3 uid="uid://csqx5v4cb1sxy"]
 
 [ext_resource type="Script" uid="uid://bpuuo1a6p6uoi" path="res://src/static/scripts/miguel.gd" id="1_mo6on"]
-[ext_resource type="Texture2D" uid="uid://fy3r1773xrbk" path="res://src/Assets/Sprites/miguel.png" id="2_mo6on"]
+[ext_resource type="Texture2D" uid="uid://bys61yudu5uou" path="res://src/Assets/Sprites/miguel.png" id="2_mo6on"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo6on"]
-size = Vector2(11, 34)
+size = Vector2(11, 36)
 
 [sub_resource type="Animation" id="Animation_mo6on"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
+tracks/0/path = NodePath("Texture:flip_h")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:flip_h")
+tracks/1/path = NodePath("Texture:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xhhxs"]
+resource_name = "miguel_fall"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [40, 41]
 }
 
 [sub_resource type="Animation" id="Animation_1vagi"]
@@ -41,54 +58,30 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
+tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666668),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [0, 1, 2, 3, 4, 5]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
-[sub_resource type="Animation" id="Animation_2siqn"]
-resource_name = "miguel_iddle_left"
-length = 0.8
+[sub_resource type="Animation" id="Animation_4ut45"]
+resource_name = "miguel_jump"
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
+tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666668),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0.033333335, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [30, 31]
 }
 
 [sub_resource type="Animation" id="Animation_8b8hg"]
@@ -98,76 +91,37 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
+tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_5epd2"]
-resource_name = "miguel_run_left"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Texture:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2siqn"]
 _data = {
 &"RESET": SubResource("Animation_mo6on"),
+&"miguel_fall": SubResource("Animation_xhhxs"),
 &"miguel_iddle": SubResource("Animation_1vagi"),
-&"miguel_iddle_left": SubResource("Animation_2siqn"),
-&"miguel_run": SubResource("Animation_8b8hg"),
-&"miguel_run_left": SubResource("Animation_5epd2")
+&"miguel_jump": SubResource("Animation_4ut45"),
+&"miguel_run": SubResource("Animation_8b8hg")
 }
 
-[node name="Miguel" type="CharacterBody2D" unique_id=225266533]
+[node name="Miguel" type="CharacterBody2D" unique_id=225266533 node_paths=PackedStringArray("animationTree")]
 script = ExtResource("1_mo6on")
+animationTree = NodePath("")
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=2070269397]
 position = Vector2(0.9999962, 2)
 scale = Vector2(0.578125, 0.609375)
 texture = ExtResource("2_mo6on")
 hframes = 10
-vframes = 10
+vframes = 11
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1805786264]
-position = Vector2(1.5, 5)
+position = Vector2(1.5, 4)
 shape = SubResource("RectangleShape2D_mo6on")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=368896134]
