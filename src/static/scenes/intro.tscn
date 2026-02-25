@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cths5xv3g3d3j"]
+
+[ext_resource type="Script" uid="uid://cni01tpgaqxdb" path="res://intro.gd" id="1_fuw52"]
+[ext_resource type="Texture2D" uid="uid://cwjaclnw6ynob" path="res://src/Assets/Sprites/Cena_introdutoria.png" id="2_ttrv3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7ncc"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlvah"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(1280, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cf0u"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(1920, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5adc"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(640, 360, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mnhp"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(1280, 360, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrvlp"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(1920, 360, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pigg"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(640, 720, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81c1h"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(1280, 720, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gimho"]
+atlas = ExtResource("2_ttrv3")
+region = Rect2(1920, 720, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7062"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7ncc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlvah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cf0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5adc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mnhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrvlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pigg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81c1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gimho")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.3
+}]
+
+[node name="intro" type="Node2D" unique_id=2110030677]
+script = ExtResource("1_fuw52")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=672659291]
+position = Vector2(638.5, 354.5)
+scale = Vector2(1.9796876, 1.9583333)
+sprite_frames = SubResource("SpriteFrames_u7062")
+autoplay = "default"
+
+[node name="Button" type="Button" parent="." unique_id=115112490]
+offset_right = 8.0
+offset_bottom = 8.0
