@@ -12,7 +12,7 @@ func _process(_delta) -> void:
 
 
 func _on_jogar_pressed():
-	get_tree().change_scene_to_file("res://src/static/scenes/main_scene.tscn")
+	get_tree().change_scene_to_file("res://src/static/scenes/fase1.tscn")
 
 
 func _on_nivel_pressed() -> void:
