@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c28jbnqaxnmyy"]
+[gd_scene format=3 uid="uid://f3cjuq86fkhy"]
 
 [ext_resource type="Texture2D" uid="uid://ubo8an56hdqu" path="res://src/Assets/Sprites/animação carimbando.png" id="1_dhmf5"]
 
@@ -329,9 +329,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Carimbando___" type="Node2D"]
+[node name="Carimbando___" type="Node2D" unique_id=2135251846]
 
-[node name="carimbando" type="AnimatedSprite2D" parent="."]
+[node name="carimbando" type="AnimatedSprite2D" parent="." unique_id=1604773961]
 sprite_frames = SubResource("SpriteFrames_5wioa")
-animation = &"carimbo_vermelho"
-frame_progress = 0.57806957
+animation = &"carimbo_amarelo"
+frame = 5
+frame_progress = 0.82118315

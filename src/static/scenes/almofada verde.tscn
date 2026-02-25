@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://lgttk3knw87m"]
+
+[ext_resource type="Script" uid="uid://5x1ocogoif25" path="res://src/static/scripts/almofada_verde.gd" id="1_1n7c5"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xgexi"]
+load_path = "res://.godot/imported/animação carimbo.png-3dbaf4c2d03602c8a6fe0c6e6d7decc4.ctex"
+
+[sub_resource type="Animation" id="Animation_8rflc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+
+[sub_resource type="Animation" id="Animation_l4a2g"]
+resource_name = "almofada_verde_fechando"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.12061905, 0.1692731, 0.21894848, 0.26964527, 0.31217104, 0.35367537),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 10, 11, 12, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yfmxy"]
+_data = {
+&"RESET": SubResource("Animation_8rflc"),
+&"almofada_verde_fechando": SubResource("Animation_l4a2g")
+}
+
+[node name="Almofada verde" type="Node2D" unique_id=1286679418]
+script = ExtResource("1_1n7c5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2016497273]
+texture = SubResource("CompressedTexture2D_xgexi")
+hframes = 7
+vframes = 6
+frame = 14
+
+[node name="Animation verde" type="AnimationPlayer" parent="." unique_id=688831274]
+libraries/ = SubResource("AnimationLibrary_yfmxy")
+
+[node name="Button" type="Button" parent="." unique_id=746023097]
+offset_left = -36.0
+offset_top = 8.0
+offset_right = 34.0
+offset_bottom = 35.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

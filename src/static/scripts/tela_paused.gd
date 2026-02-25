@@ -12,7 +12,7 @@ func _on_voltar_pressed() -> void:
 
 func _on_reiniciar_pressed() -> void:
 	var miguel = get_parent().get_node("Miguel")
-	miguel.global_position = Vector2(139.0, 140.2222)
+	miguel.global_position = Vector2(139.0, 218.0)
 	Global.characterPos = miguel.global_position
 	Global.save()
 
