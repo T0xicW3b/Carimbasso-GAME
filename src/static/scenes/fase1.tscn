@@ -7,7 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://du550ct0b11m8" path="res://src/Sounds/pensando.mp3" id="4_vuki4"]
 [ext_resource type="Texture2D" uid="uid://br07wsbpcd8j7" path="res://src/Assets/Sprites/zona_de_efeito.png" id="6_2u5gs"]
 [ext_resource type="PackedScene" uid="uid://cdrphm68hhjc7" path="res://src/static/scenes/almofada rosa.tscn" id="7_q6otq"]
+[ext_resource type="Script" uid="uid://x2x8h0r7y05b" path="res://src/static/scenes/coorechovis.gd" id="9_1gpp2"]
 [ext_resource type="Texture2D" uid="uid://qock8lgy1nsn" path="res://src/Assets/Sprites/zona_de_efeito2.png" id="9_tf0p0"]
+[ext_resource type="Texture2D" uid="uid://n6db7yqi27yu" path="res://src/Assets/Sprites/Correchovis.png" id="10_hekiu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkgkv"]
 size = Vector2(1059.375, 20)
@@ -56,6 +58,102 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e601w"]
+size = Vector2(57, 59.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nexuf"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(0, 64, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qicpd"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(94, 64, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcvba"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(188, 64, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6abmh"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(282, 64, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlmju"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(376, 64, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ykda"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(0, 0, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kthov"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(94, 0, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chlqu"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(188, 0, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfbs3"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(282, 0, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqkq0"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(376, 0, 94, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x74cv"]
+atlas = ExtResource("10_hekiu")
+region = Rect2(0, 64, 94, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ucipc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nexuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qicpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcvba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6abmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlmju")
+}],
+"loop": true,
+"name": &"bater",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ykda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kthov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chlqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfbs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqkq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x74cv")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kttd"]
+size = Vector2(87, 59)
 
 [node name="main_scene" type="Node2D" unique_id=2034795649]
 process_mode = 3
@@ -124,13 +222,34 @@ position = Vector2(1642, 203)
 shape = SubResource("RectangleShape2D_1gpp2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AreaLEVEZA" unique_id=1363168870]
-position = Vector2(1642.9999, 206)
+position = Vector2(1634.9999, 199.99998)
 scale = Vector2(1.3640351, 1.6615385)
 sprite_frames = SubResource("SpriteFrames_nexuf")
 frame = 3
 frame_progress = 1.0
 
+[node name="coorechovis" type="CharacterBody2D" parent="." unique_id=40406405]
+script = ExtResource("9_1gpp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coorechovis" unique_id=1799808041]
+position = Vector2(1494.5, 264)
+shape = SubResource("RectangleShape2D_e601w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coorechovis" unique_id=1128757425]
+position = Vector2(1509, 261)
+sprite_frames = SubResource("SpriteFrames_ucipc")
+animation = &"bater"
+frame_progress = 0.14959109
+
+[node name="HITBOx" type="Area2D" parent="coorechovis" unique_id=1432349498]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coorechovis/HITBOx" unique_id=771544389]
+position = Vector2(1508.5, 263.5)
+shape = SubResource("RectangleShape2D_0kttd")
+
 [connection signal="body_entered" from="AreaJUMP" to="Miguel" method="_on_area_jump_body_entered"]
 [connection signal="body_exited" from="AreaJUMP" to="Miguel" method="_on_area_jump_body_exited"]
 [connection signal="body_entered" from="AreaLEVEZA" to="Miguel" method="_on_area_leveza_body_entered"]
 [connection signal="body_exited" from="AreaLEVEZA" to="Miguel" method="_on_area_leveza_body_exited"]
+[connection signal="body_entered" from="coorechovis/HITBOx" to="coorechovis" method="_on_hitb_ox_body_entered"]
+[connection signal="body_exited" from="coorechovis/HITBOx" to="coorechovis" method="_on_hitb_ox_body_exited"]

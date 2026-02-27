@@ -36,7 +36,3 @@ func toogle_fullscreen() -> void:
 func toggle_pause():
 	get_tree().paused = !get_tree().paused
 	pause_menu.visible = get_tree().paused
-
-
-func _on_area_leveza_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
