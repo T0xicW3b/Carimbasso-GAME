@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://csqx5v4cb1sxy"]
 
 [ext_resource type="Script" uid="uid://bpuuo1a6p6uoi" path="res://src/static/scripts/miguel.gd" id="1_mo6on"]
-[ext_resource type="Texture2D" uid="uid://bys61yudu5uou" path="res://src/Assets/Sprites/miguel.png" id="2_mo6on"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_32xcs"]
+load_path = "res://.godot/imported/miguel.completo.png-e967d0fab4968aeea80c8a54fda29c16.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo6on"]
 size = Vector2(11, 36)
@@ -109,16 +111,15 @@ _data = {
 &"miguel_run": SubResource("Animation_8b8hg")
 }
 
-[node name="Miguel" type="CharacterBody2D" unique_id=225266533 node_paths=PackedStringArray("animationTree")]
+[node name="Miguel" type="CharacterBody2D" unique_id=225266533]
 script = ExtResource("1_mo6on")
-animationTree = NodePath("")
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=2070269397]
 position = Vector2(0.9999962, 2)
 scale = Vector2(0.578125, 0.609375)
-texture = ExtResource("2_mo6on")
+texture = SubResource("CompressedTexture2D_32xcs")
 hframes = 10
-vframes = 11
+vframes = 13
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1805786264]
 position = Vector2(1.5, 4)

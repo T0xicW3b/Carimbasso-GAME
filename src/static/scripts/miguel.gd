@@ -6,6 +6,7 @@ const JUMP_VEL = -300.0
 
 var stateMachine
 var canJump = false
+var sem_gravidade = false
 
 @export_category("Objects")
 @export var animationTree: AnimationTree = null
@@ -17,9 +18,11 @@ func _physics_process(delta: float) -> void:
 	
 	#porque caralhos eu preciso adicionar pra ele cair??
 	#isso nem faz sentido dentro do plano cartesiano
-	if !is_on_floor():
+	if not sem_gravidade:
 		$AnimationPlayer.play("miguel_fall")
 		velocity.y += GRAVITY * delta
+	else:
+		velocity.y = 0
 	
 	if Input.is_action_just_pressed("JUMP"):
 		if is_on_floor() && canJump:
@@ -57,3 +60,13 @@ func _on_area_jump_body_entered(body: Node2D) -> void:
 func _on_area_jump_body_exited(body: Node2D) -> void:
 	if body == self:
 		canJump = false
+
+
+func _on_area_leveza_body_entered(body):
+	if body.is_in_group("player"):
+		body.sem_gravidade = true
+
+
+func _on_area_leveza_body_exited(body):
+	if body.is_in_group("player"):
+		body.sem_gravidade = false

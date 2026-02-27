@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cths5xv3g3d3j"]
 
-[ext_resource type="Script" uid="uid://cni01tpgaqxdb" path="res://intro.gd" id="1_fuw52"]
+[ext_resource type="Script" uid="uid://cni01tpgaqxdb" path="res://src/static/scripts/intro.gd" id="1_fuw52"]
 [ext_resource type="Texture2D" uid="uid://cwjaclnw6ynob" path="res://src/Assets/Sprites/Cena_introdutoria.png" id="2_ttrv3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7ncc"]

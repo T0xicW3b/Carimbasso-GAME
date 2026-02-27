@@ -7,26 +7,66 @@
 [ext_resource type="AudioStream" uid="uid://du550ct0b11m8" path="res://src/Sounds/pensando.mp3" id="4_vuki4"]
 [ext_resource type="Texture2D" uid="uid://br07wsbpcd8j7" path="res://src/Assets/Sprites/zona_de_efeito.png" id="6_2u5gs"]
 [ext_resource type="PackedScene" uid="uid://cdrphm68hhjc7" path="res://src/static/scenes/almofada rosa.tscn" id="7_q6otq"]
+[ext_resource type="Texture2D" uid="uid://qock8lgy1nsn" path="res://src/Assets/Sprites/zona_de_efeito2.png" id="9_tf0p0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkgkv"]
-size = Vector2(560.75, 20)
+size = Vector2(1059.375, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6otq"]
 size = Vector2(227, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u5gs"]
-size = Vector2(34.375, 267)
+size = Vector2(34.375, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gpp2"]
+size = Vector2(312, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hekiu"]
+atlas = ExtResource("9_tf0p0")
+region = Rect2(0, 390, 228, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e601w"]
+atlas = ExtResource("9_tf0p0")
+region = Rect2(228, 390, 228, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t4xh"]
+atlas = ExtResource("9_tf0p0")
+region = Rect2(456, 390, 228, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuxb6"]
+atlas = ExtResource("9_tf0p0")
+region = Rect2(684, 390, 228, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nexuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hekiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e601w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t4xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuxb6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="main_scene" type="Node2D" unique_id=2034795649]
 process_mode = 3
 script = ExtResource("1_grvaw")
 
 [node name="TelaDeFundoFase1Improvisada" type="Sprite2D" parent="." unique_id=2003050130]
-position = Vector2(645.5, 362)
-scale = Vector2(1.5714287, 1.5478262)
+position = Vector2(640.5002, 354.49994)
+scale = Vector2(3.1147747, 3.097826)
 texture = ExtResource("2_cq8o0")
 
-[node name="Miguel" parent="." unique_id=771144450 instance=ExtResource("1_mkgkv")]
+[node name="Miguel" parent="." unique_id=771144450 groups=["player"] instance=ExtResource("1_mkgkv")]
 process_mode = 1
 position = Vector2(218, 138.99998)
 scale = Vector2(2.968, 2.546)
@@ -35,6 +75,12 @@ scale = Vector2(2.968, 2.546)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chao temporario" unique_id=560205772]
 position = Vector2(276.625, 387)
+shape = SubResource("RectangleShape2D_mkgkv")
+
+[node name="chao temporario3" type="StaticBody2D" parent="." unique_id=693371543]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao temporario3" unique_id=1755259863]
+position = Vector2(1162.6875, 303)
 shape = SubResource("RectangleShape2D_mkgkv")
 
 [node name="pensando" type="AudioStreamPlayer" parent="." unique_id=53005780]
@@ -60,12 +106,31 @@ process_mode = 2
 [node name="chao temporario2" type="StaticBody2D" parent="." unique_id=1539075549]
 
 [node name="aaa" type="CollisionShape2D" parent="chao temporario2" unique_id=1133385774]
-position = Vector2(577.8125, 257.5)
+position = Vector2(613, 353)
 shape = SubResource("RectangleShape2D_2u5gs")
 
 [node name="Almofada rosa" parent="." unique_id=1286679418 instance=ExtResource("7_q6otq")]
 position = Vector2(99.000015, 191)
 scale = Vector2(2.732517, 2.3627048)
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=776356257]
+position = Vector2(642, 365)
+zoom = Vector2(0.5, 0.5)
+
+[node name="AreaLEVEZA" type="Area2D" parent="." unique_id=328025329]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLEVEZA" unique_id=1718827501]
+position = Vector2(1642, 203)
+shape = SubResource("RectangleShape2D_1gpp2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AreaLEVEZA" unique_id=1363168870]
+position = Vector2(1642.9999, 206)
+scale = Vector2(1.3640351, 1.6615385)
+sprite_frames = SubResource("SpriteFrames_nexuf")
+frame = 3
+frame_progress = 1.0
+
 [connection signal="body_entered" from="AreaJUMP" to="Miguel" method="_on_area_jump_body_entered"]
 [connection signal="body_exited" from="AreaJUMP" to="Miguel" method="_on_area_jump_body_exited"]
+[connection signal="body_entered" from="AreaLEVEZA" to="Miguel" method="_on_area_leveza_body_entered"]
+[connection signal="body_exited" from="AreaLEVEZA" to="Miguel" method="_on_area_leveza_body_exited"]

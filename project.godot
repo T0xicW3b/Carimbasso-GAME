@@ -27,7 +27,12 @@ Global="*uid://br6545lu5t37h"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/subwindows/embed_subwindows=false
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[global_group]
+
+player=""
 
 [input]
 
