@@ -7,9 +7,12 @@ const JUMP_VEL = -300.0
 var stateMachine
 var canJump = false
 var sem_gravidade = false
+var knockback = Vector2.ZERO
 
 @export_category("Objects")
 @export var animationTree: AnimationTree = null
+@export var knockback_force = 300
+@export var knockback_up = 200
 
 func _ready() -> void:
 	#stateMachine = animationTree["parameters/playback"]
@@ -31,6 +34,9 @@ func _physics_process(delta: float) -> void:
 	
 	#pra fazer a animação de iddle ficar pra esquerda
 	var direction := Input.get_axis("LEFT", "RIGHT")
+	if knockback.length() > 0:
+		velocity = knockback
+		knockback = knockback.move_toward(Vector2.ZERO, 1200 * delta)
 	
 	if direction != 0:
 		velocity.x = direction * SPEED
@@ -52,6 +58,10 @@ func animate(direction):
 			$AnimationPlayer.play("miguel_run")
 		else:
 			$AnimationPlayer.play("miguel_iddle")
+func tomar_dano(pos_inimigo: Vector2):
+	var dir = (global_position - pos_inimigo).normalized()
+
+	knockback = Vector2(dir.x * knockback_force, -knockback_up)
 
 
 func _on_area_jump_body_entered(body: Node2D) -> void:

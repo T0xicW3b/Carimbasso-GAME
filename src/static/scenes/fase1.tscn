@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://du550ct0b11m8" path="res://src/Sounds/pensando.mp3" id="4_vuki4"]
 [ext_resource type="Texture2D" uid="uid://br07wsbpcd8j7" path="res://src/Assets/Sprites/zona_de_efeito.png" id="6_2u5gs"]
 [ext_resource type="PackedScene" uid="uid://cdrphm68hhjc7" path="res://src/static/scenes/almofada rosa.tscn" id="7_q6otq"]
-[ext_resource type="Script" uid="uid://x2x8h0r7y05b" path="res://src/static/scenes/coorechovis.gd" id="9_1gpp2"]
+[ext_resource type="Script" uid="uid://x2x8h0r7y05b" path="res://src/static/scripts/coorechovis.gd" id="9_1gpp2"]
 [ext_resource type="Texture2D" uid="uid://qock8lgy1nsn" path="res://src/Assets/Sprites/zona_de_efeito2.png" id="9_tf0p0"]
 [ext_resource type="Texture2D" uid="uid://n6db7yqi27yu" path="res://src/Assets/Sprites/Correchovis.png" id="10_hekiu"]
 
@@ -153,7 +153,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kttd"]
-size = Vector2(87, 59)
+size = Vector2(135.5, 117.5)
 
 [node name="main_scene" type="Node2D" unique_id=2034795649]
 process_mode = 3
@@ -236,20 +236,19 @@ position = Vector2(1494.5, 264)
 shape = SubResource("RectangleShape2D_e601w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coorechovis" unique_id=1128757425]
-position = Vector2(1509, 261)
+position = Vector2(1513, 263)
 sprite_frames = SubResource("SpriteFrames_ucipc")
-animation = &"bater"
-frame_progress = 0.14959109
+animation = &"normal"
 
-[node name="HITBOx" type="Area2D" parent="coorechovis" unique_id=1432349498]
+[node name="hitbox" type="Area2D" parent="coorechovis" unique_id=1432349498]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="coorechovis/HITBOx" unique_id=771544389]
-position = Vector2(1508.5, 263.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coorechovis/hitbox" unique_id=771544389]
+position = Vector2(1482, 253)
 shape = SubResource("RectangleShape2D_0kttd")
 
 [connection signal="body_entered" from="AreaJUMP" to="Miguel" method="_on_area_jump_body_entered"]
 [connection signal="body_exited" from="AreaJUMP" to="Miguel" method="_on_area_jump_body_exited"]
 [connection signal="body_entered" from="AreaLEVEZA" to="Miguel" method="_on_area_leveza_body_entered"]
 [connection signal="body_exited" from="AreaLEVEZA" to="Miguel" method="_on_area_leveza_body_exited"]
-[connection signal="body_entered" from="coorechovis/HITBOx" to="coorechovis" method="_on_hitb_ox_body_entered"]
-[connection signal="body_exited" from="coorechovis/HITBOx" to="coorechovis" method="_on_hitb_ox_body_exited"]
+[connection signal="body_entered" from="coorechovis/hitbox" to="coorechovis" method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="coorechovis/hitbox" to="coorechovis" method="_on_hitbox_body_exited"]
