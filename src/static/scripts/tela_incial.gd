@@ -1,9 +1,12 @@
 extends Control
 
+@onready var transition = $fade/transition
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	transition.play("fade-out")
+	await transition.animation_finished
+	$fade.hide()
 
 
 

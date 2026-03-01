@@ -18,9 +18,14 @@ config/name="Carimbasso"
 run/main_scene="uid://cths5xv3g3d3j"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 Global="*uid://br6545lu5t37h"
+SceneManager="*uid://x0mbw5yxk5vy"
 
 [display]
 
